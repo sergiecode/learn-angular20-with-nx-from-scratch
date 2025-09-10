@@ -1,6 +1,8 @@
 ## Clase: Inicializar proyecto con NX
 
-### Pasos a seguir
+### Pasos a seguir:
+
+#### 1. Crear el Workspace
 
 ```bash
 npx create-nx-workspace@latest learn-angular20-with-nx-from-scratch --preset=npm
