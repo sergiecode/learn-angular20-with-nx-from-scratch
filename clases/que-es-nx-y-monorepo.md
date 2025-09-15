@@ -69,7 +69,3 @@ NX potencia la arquitectura monorepo al resolver muchos de sus desafíos:
 | Configuración inicial        |  Única         |  Múltiple       |  Única + NX scaffolding  |
 | Coordinación entre equipos   |  Alta           |  Baja           |  Alta, pero más fluida con NX |
 
----
-
-Espero que este `.textdoc` te resulte útil para tu tutorial. Si querés que profundicemos en algún punto o agreguemos ejemplos de comandos de NX, avisame y lo armamos con gusto.
-::contentReference[oaicite:26]{index=26}
