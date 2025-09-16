@@ -23,19 +23,19 @@ interface Enrollment {
 }
 
 // In-memory data
-let courses: Course[] = [
+const courses: Course[] = [
   { id: '1', title: 'Angular monorepo con NX', description: 'Aprendé a utilizar arquitectura monorepo', teacher: 'Sergie Code' },
   { id: '2', title: 'Fundamentos de Python', description: 'Aprendé Python desde cero', teacher: 'Sergie Code' },
   { id: '3', title: 'Go para Backend', description: 'Aprendé esta poderosa tecnología de backend de Google', teacher: 'Jim Morrison' }
 ];
 
-let students: Student[] = [
+const students: Student[] = [
   { id: '1', name: 'Alice Cooper', email: 'alice@gmail.com' },
   { id: '2', name: 'Bob Dylan', email: 'bob@gmail.com' },
   { id: '3', name: 'Courtney Love', email: 'courtney@gmail.com' }
 ];
 
-let enrollments: Enrollment[] = [
+const enrollments: Enrollment[] = [
   { id: '1', studentId: '1', courseId: '1', date: '2025-08-15' },
   { id: '2', studentId: '1', courseId: '2', date: '2025-08-20' },
   { id: '3', studentId: '2', courseId: '1', date: '2025-08-21' },
@@ -45,7 +45,7 @@ let enrollments: Enrollment[] = [
 // Helper functions
 const generateId = () => Date.now().toString();
 
-const parseBody = (req: http.IncomingMessage): Promise<any> => {
+const parseBody = (req: http.IncomingMessage): Promise<unknown> => {
   return new Promise((resolve) => {
     let body = '';
     req.on('data', (chunk) => body += chunk);
@@ -59,7 +59,7 @@ const parseBody = (req: http.IncomingMessage): Promise<any> => {
   });
 };
 
-const sendJSON = (res: http.ServerResponse, data: any, status = 200) => {
+const sendJSON = (res: http.ServerResponse, data: unknown, status = 200) => {
   res.writeHead(status, { 
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
@@ -204,7 +204,7 @@ const server = http.createServer(async (req, res) => {
     else {
       sendJSON(res, { error: 'Not found' }, 404);
     }
-  } catch (error) {
+  } catch {
     sendJSON(res, { error: 'Internal server error' }, 500);
   }
 });

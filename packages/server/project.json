@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/server/src",
   "projectType": "application",
+  "tags": ["scope:api"],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -79,6 +80,5 @@
         }
       }
     }
-  },
-  "tags": []
+  }
 }

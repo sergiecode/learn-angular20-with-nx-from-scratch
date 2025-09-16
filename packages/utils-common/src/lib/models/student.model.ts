@@ -9,4 +9,4 @@ export interface CreateStudentRequest {
   email: string;
 }
 
-export interface UpdateStudentRequest extends Partial<CreateStudentRequest> {}
+export type UpdateStudentRequest = Partial<CreateStudentRequest>;

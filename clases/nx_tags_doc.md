@@ -17,41 +17,28 @@ Esto ayuda a garantizar que:
 
 ---
 
-## 🔹 Agregar tags a los proyectos
-Abrí el archivo `nx.json` y dentro de la sección `projects` agregá los tags correspondientes:
+## 🔹 Configuración práctica implementada
+
+### 1. Agregar tags a los proyectos en `nx.json`
+En el archivo `nx.json` agregamos la sección `projects` con los tags correspondientes:
 
 ```json
 {
   "projects": {
+    "app1": { "tags": ["scope:app"] },
+    "app2": { "tags": ["scope:app"] },
     "ui-shared": { "tags": ["scope:ui"] },
     "utils-common": { "tags": ["scope:utils"] },
-    "app1": { "tags": ["scope:app"] },
-    "app2": { "tags": ["scope:app"] }
+    "server": { "tags": ["scope:api"] }
   }
 }
 ```
 
-Con esto, cada proyecto queda clasificado según su rol dentro del monorepo.
-
----
-
-## 🔹 Configurar restricciones
-En el mismo archivo `nx.json`, podés definir reglas que impidan dependencias incorrectas entre proyectos. Ejemplo:
+### 2. Configurar restricciones en `nx.json`
+También agregamos las restricciones de dependencias:
 
 ```json
 {
-  "extends": "nx/presets/core.json",
-  "namedInputs": { },
-  "targetDefaults": { },
-  "projects": { },
-  "implicitDependencies": {},
-  "workspaceLayout": {},
-  "pluginsConfig": {},
-  "nx": {},
-  "generators": {},
-  "tasksRunnerOptions": {},
-  "targetDefaults": {},
-  "extends": "nx/presets/core.json",
   "dependencyConstraints": [
     {
       "sourceTag": "scope:utils",
@@ -60,32 +47,164 @@ En el mismo archivo `nx.json`, podés definir reglas que impidan dependencias in
     {
       "sourceTag": "scope:ui",
       "onlyDependOnLibsWithTags": ["scope:utils", "scope:ui"]
+    },
+    {
+      "sourceTag": "scope:api",
+      "onlyDependOnLibsWithTags": ["scope:utils"]
+    },
+    {
+      "sourceTag": "scope:app",
+      "onlyDependOnLibsWithTags": ["scope:utils", "scope:ui", "scope:api"]
     }
   ]
 }
 ```
 
-En este ejemplo:
-- Las librerías con `scope:utils` **solo pueden depender** de otras librerías con `scope:utils`.
-- Las librerías con `scope:ui` pueden depender de `utils` o de otras `ui`, pero no de `app1` o `app2`.
+### 3. Configurar ESLint para enforcar restricciones
+En `eslint.config.mjs` actualizamos la regla `@nx/enforce-module-boundaries`:
 
-Esto asegura que `utils-common` no importe nunca nada de `app1`, cumpliendo con la arquitectura definida.
+```javascript
+{
+  files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+  rules: {
+    '@nx/enforce-module-boundaries': [
+      'error',
+      {
+        enforceBuildableLibDependency: true,
+        allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
+        depConstraints: [
+          {
+            sourceTag: 'scope:utils',
+            onlyDependOnLibsWithTags: ['scope:utils'],
+          },
+          {
+            sourceTag: 'scope:ui',
+            onlyDependOnLibsWithTags: ['scope:utils', 'scope:ui'],
+          },
+          {
+            sourceTag: 'scope:api',
+            onlyDependOnLibsWithTags: ['scope:utils'],
+          },
+          {
+            sourceTag: 'scope:app',
+            onlyDependOnLibsWithTags: ['scope:utils', 'scope:ui', 'scope:api'],
+          },
+        ],
+      },
+    ],
+  },
+}
+```
+
+### 4. Agregar tags a los archivos `project.json` individuales
+Cada proyecto también debe tener sus tags en su archivo `project.json`:
+
+```json
+{
+  "name": "utils-common",
+  "tags": ["scope:utils"]
+}
+```
+
+---
+
+## 🔹 Comandos útiles
+
+### Verificar que todos los proyectos sean reconocidos
+```bash
+npx nx show projects
+```
+
+### Validar restricciones de dependencias
+```bash
+npx nx lint <proyecto>
+npx nx eslint:lint <proyecto>
+```
+
+### Ver el grafo de dependencias
+```bash
+npx nx graph
+npx nx graph --print  # Versión en terminal
+```
+
+### Limpiar cache de Nx (útil tras cambios de configuración)
+```bash
+npx nx reset
+```
+
+### Ejecutar lint en todos los proyectos
+```bash
+npx nx run-many --target=lint --all
+```
+
+---
+
+## 🔹 Arquitectura implementada
+
+Nuestra configuración establece la siguiente jerarquía:
+
+```
+┌─────────────────┐
+│   scope:app     │  ← Aplicaciones (app1, app2)
+│  (apps/features)│
+└─────────────────┘
+         │
+         ▼
+┌─────────────────┐
+│   scope:ui      │  ← Componentes UI (ui-shared)
+│  (UI components)│
+└─────────────────┘
+         │
+         ▼
+┌─────────────────┐     ┌─────────────────┐
+│  scope:utils    │     │   scope:api     │
+│   (utilities)   │     │    (server)     │
+└─────────────────┘     └─────────────────┘
+```
+
+**Reglas:**
+- `scope:utils`: Solo puede depender de otros `scope:utils`
+- `scope:ui`: Puede depender de `scope:utils` y otros `scope:ui`
+- `scope:api`: Solo puede depender de `scope:utils`
+- `scope:app`: Puede depender de cualquier scope
+
+---
+
+## 🔹 Demostración práctica
+
+### Ejemplo de violación detectada
+Si intentamos que `utils-common` importe de `ui-shared`:
+
+```typescript
+// En packages/utils-common/src/index.ts
+import { ButtonComponent } from '@learn-angular20-with-nx-from-scratch/ui-shared';
+```
+
+Al ejecutar `npx nx eslint:lint utils-common`, obtenemos:
+```
+Circular dependency between "utils-common" and "ui-shared" detected
+```
 
 ---
 
 ## 🔹 Validación
-Para verificar las restricciones, corré:
+Para verificar las restricciones:
 ```bash
-nx lint
+npx nx lint app1      # ✅ Debería pasar
+npx nx lint ui-shared # ✅ Debería pasar  
+npx nx eslint:lint utils-common # ✅ Debería pasar (sin importaciones prohibidas)
 ```
-Si hay dependencias no permitidas, Nx te mostrará los errores y qué proyectos los causan.
+
+Si hay dependencias no permitidas, Nx te mostrará los errores específicos indicando qué proyectos violan las reglas.
 
 ---
 
-## ✅ Resumen
-- **Tags**: clasifican proyectos en el monorepo.
-- **Restricciones**: evitan dependencias no deseadas.
-- `nx lint` valida automáticamente las reglas.
+## ✅ Beneficios obtenidos
+- **Arquitectura controlada**: Imposible crear dependencias circulares o incorrectas
+- **Escalabilidad**: Fácil de mantener en equipos grandes
+- **Automatización**: Validación automática en cada lint/build
+- **Claridad**: Tags visuales en el grafo de dependencias
+- **Refactoring seguro**: Cambios estructurales detectados inmediatamente
 
-Con esto, asegurás que tu monorepo mantenga una **arquitectura limpia, controlada y escalable**.
+Con esta configuración, aseguramos que nuestro monorepo mantenga una **arquitectura limpia, controlada y escalable** de forma automática.
 

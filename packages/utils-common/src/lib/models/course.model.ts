@@ -11,4 +11,4 @@ export interface CreateCourseRequest {
   teacher: string;
 }
 
-export interface UpdateCourseRequest extends Partial<CreateCourseRequest> {}
+export type UpdateCourseRequest = Partial<CreateCourseRequest>;
