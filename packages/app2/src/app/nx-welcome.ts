@@ -739,13 +739,10 @@ import { CommonModule } from '@angular/common';
                   <span> Enable faster CI & better DX </span>
                 </h2>
               </div>
-              <p>Your workspace is connected to Nx Cloud.</p>
-              <a
-                href="https://nx.dev/ci/intro/ci-with-nx#learn-about-nx-on-ci"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Learn about Nx on CI
+              <p>Your Nx Cloud remote cache setup is almost complete.</p>
+
+              <a href="" target="_blank" rel="noreferrer">
+                Click here to finish
               </a>
             </div>
           </div>
