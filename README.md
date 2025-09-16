@@ -11,4 +11,5 @@ Sergie Code Angular 20 with NX from Scratch
 7. [Node.js](clases/node-js.md)
 8. Agregar COMPONENTES, MODELOS y SERVICIO en Común
 9. Agregar Servidor NODEJS en común
-10. 
+10. Agregar aplicación inscripción estudiantes en Angular
+11. 

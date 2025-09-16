@@ -5,6 +5,7 @@ En esta clase aprenderás a crear y desplegar un servidor **Node.js** dentro del
 ---
 
 EN ESTA CLASE ACTUALIZAR EL PACKAGE.JSON PARA QUE FUNCIONE
+IMPORTS: EL @SOFTWARE O @LEARN HAY QUE ACTUALIZARLO POR EL QUE ESTÉ EN EL TSCONFIG
 
 ---
 
