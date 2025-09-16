@@ -38,6 +38,10 @@ Este proyecto es un **monorepo NX** que demuestra cómo construir aplicaciones m
 12. Agregar TESTS UNITARIOS
 13. Pasar los Lints para ver errores
 14. Conectar a NX CLOUD
+15. NX Affected
+16. NX Storyboard
+
+Extra. NX Tags
 
 ## 🚀 Tecnologías Utilizadas
 
