@@ -1,0 +1,1 @@
+npx nx connect-to-nx-cloud

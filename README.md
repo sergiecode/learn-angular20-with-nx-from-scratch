@@ -35,6 +35,9 @@ Este proyecto es un **monorepo NX** que demuestra cómo construir aplicaciones m
 9. [Agregar Servidor Node.js](clases/agregar-server-nodejs.md)
 10. [Agregar App1 - Inscripciones de Estudiantes](clases/agregar-app1-inscripciones.md)
 11. [Agregar App2 - Cursos y Profesores](clases/agregar-app2-cursos-profesores.md)
+12. Agregar TESTS UNITARIOS
+13. Pasar los Lints para ver errores
+14. Conectar a NX CLOUD
 
 ## 🚀 Tecnologías Utilizadas
 
