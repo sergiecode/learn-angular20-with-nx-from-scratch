@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - tutorial/**
   pull_request:
 
 permissions:
