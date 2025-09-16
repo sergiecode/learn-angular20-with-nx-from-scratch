@@ -1,7 +1,15 @@
 # Comandos Nx: run-many y herramientas de gestión masiva
 
-## 🎯 Objetivo
-Dominar el uso de `nx run-many` y otros comandos de Nx para ejecutar tareas en múltiples proyectos de forma eficiente en un monorepo.
+---
+
+## ¿Qué es `nx run-many` y por qué es útil?
+
+`nx run-many` es un comando de Nx que permite ejecutar tareas (como lint, test, build) en múltiples proyectos del monorepo de forma simultánea. Es fundamental para automatizar procesos, ahorrar tiempo y mantener la calidad en proyectos grandes.
+
+Su uso es clave para:
+- Ejecutar tareas en todos los proyectos o en grupos específicos.
+- Aprovechar la paralelización y el caché de Nx.
+- Optimizar flujos de trabajo en equipos y CI/CD.
 
 ---
 

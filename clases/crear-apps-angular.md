@@ -53,6 +53,18 @@ npx nx serve app2 --port=4201
 
 ---
 
+## Visualización de dependencias entre proyectos
+
+Nx permite analizar gráficamente las dependencias entre aplicaciones y librerías usando el siguiente comando:
+
+```bash
+npx nx graph
+```
+
+Esto abrirá una visualización interactiva en el navegador mostrando cómo se relacionan las apps y librerías del monorepo. Es útil para mantener una arquitectura limpia y detectar dependencias innecesarias.
+
+---
+
 ## Notas Adicionales
 - Cada aplicación creada tiene su propia configuración y puede ejecutarse de forma independiente.
 - Nx permite escalar el monorepo agregando más aplicaciones o librerías fácilmente.

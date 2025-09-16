@@ -1,4 +1,3 @@
-
 # Clase 8: UI Shared y Utils Common (Librerías y Componentes Comunes)
 
 En esta clase del curso **Angular con NX**, aprenderás a crear y organizar librerías de componentes y utilidades que serán compartidas entre múltiples aplicaciones dentro de un monorepo NX. Este enfoque promueve la reutilización, la mantenibilidad y la escalabilidad de tus proyectos.
@@ -54,3 +53,10 @@ Esta librería contiene funciones utilitarias y modelos TypeScript que represent
 - **Reutilización**: Componentes y funciones se comparten fácilmente entre apps.
 - **Organización**: Separación clara entre UI y lógica de negocio.
 - **Escalabilidad**: Facilita el crecimiento del proyecto y la incorporación de nuevos equipos.
+
+---
+
+## Exportación centralizada y buenas prácticas
+
+- Exporta todos los componentes, servicios, modelos y funciones reutilizables desde el archivo `index.ts` de cada librería. Esto facilita su uso en las aplicaciones del monorepo y mejora la mantenibilidad.
+- Documenta los elementos compartidos para que otros desarrolladores puedan integrarlos fácilmente en sus aplicaciones.

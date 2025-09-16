@@ -101,6 +101,40 @@ Las aplicaciones Angular (`app1`, `app2`) consumen estos endpoints mediante el s
 
 ---
 
+## Configuración de CORS en este proyecto
+
+En este proyecto, la configuración de CORS se realiza manualmente agregando los headers necesarios en las respuestas HTTP y manejando las solicitudes `OPTIONS`:
+
+```typescript
+// Ejemplo en main.ts
+res.writeHead(200, {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type'
+});
+```
+
+Esto permite que las aplicaciones Angular accedan a la API desde el navegador sin instalar paquetes adicionales.
+
+## Otras formas de manejar el CORS
+
+También puedes usar paquetes externos como `cors` para simplificar la configuración en proyectos más grandes o con frameworks como Express:
+
+```bash
+npm install cors
+```
+
+```typescript
+import * as cors from 'cors';
+app.use(cors());
+```
+
+Elige el método que mejor se adapte a la arquitectura y necesidades de tu proyecto.
+
+Antes de integrar el backend con el frontend, prueba todos los endpoints usando Postman para asegurarte de que funcionan correctamente.
+
+---
+
 > **Nota:** Recuerda iniciar el servidor con el comando:
 > 
 > ```powershell

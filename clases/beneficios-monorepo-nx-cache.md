@@ -1,5 +1,19 @@
 # Beneficios de Monorepo con NX: Caché y Rendimiento
 
+---
+
+## ¿Por qué es importante la optimización y el rendimiento en monorepos Nx?
+
+En proyectos grandes y equipos colaborativos, la optimización y el rendimiento son clave para acelerar el desarrollo, reducir tiempos de espera y evitar trabajo redundante. NX ofrece herramientas como caché inteligente, builds incrementales y análisis de impacto que permiten ejecutar solo lo necesario y aprovechar al máximo los recursos disponibles.
+
+Esto se traduce en:
+- Menos tiempo perdido en builds y tests innecesarios.
+- Feedback inmediato para los desarrolladores.
+- Pipelines de CI/CD más rápidos y eficientes.
+- Mayor productividad y calidad en el trabajo diario.
+
+---
+
 ## ¿Qué es un Monorepo con NX?
 
 Un monorepo (mono-repositorio) es una estrategia de desarrollo donde múltiples proyectos relacionados se almacenan en un único repositorio. NX es una herramienta que potencia los monorepos con características avanzadas de optimización y gestión.

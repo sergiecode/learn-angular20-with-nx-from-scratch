@@ -31,4 +31,20 @@ npx nx add @nx/angular
 Este comando instalará el plugin oficial de Angular para NX y permitirá crear aplicaciones y librerías Angular dentro del workspace.
 
 ---
+
+### Separación entre aplicaciones y librerías
+
+En NX, las aplicaciones (apps) y librerías (libs) se organizan en la carpeta `packages/`. Las apps son proyectos ejecutables (por ejemplo, una web Angular), mientras que las librerías contienen código reutilizable (componentes, servicios, utilidades) que puede ser compartido entre varias apps.
+
+Esta separación facilita la escalabilidad, el mantenimiento y la reutilización de código en el monorepo.
+
+### Comandos habilitados por el plugin de Angular
+
+Al instalar el plugin de Angular, puedes usar comandos como:
+- `nx generate @nx/angular:application` para crear nuevas aplicaciones Angular.
+- `nx generate @nx/angular:library` para crear librerías de componentes o servicios.
+
+Consulta la documentación oficial de Nx para ver todas las opciones disponibles y ejemplos de uso.
+
+---
 Esta estructura y configuración te permitirá trabajar de forma profesional y escalable en proyectos modernos con NX y Angular.

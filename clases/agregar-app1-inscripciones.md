@@ -80,4 +80,11 @@ apiService.deleteEnrollment(enrollmentId).subscribe(...);
 
 ---
 
+## Buenas prácticas para integración y reutilización
+
+- Centraliza la lógica de comunicación con el backend en el servicio API de la librería `utils-common` para evitar duplicación de código y facilitar el mantenimiento.
+- Documenta y exporta los modelos y servicios desde el archivo `index.ts` de la librería para que puedan ser utilizados fácilmente en otras aplicaciones del monorepo.
+
+---
+
 > **Nota:** Recuerda iniciar el servidor Node.js antes de usar la app y verificar que las dependencias estén correctamente instaladas.

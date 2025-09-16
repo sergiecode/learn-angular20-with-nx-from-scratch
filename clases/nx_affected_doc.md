@@ -1,5 +1,18 @@
 # Clase 15: Detección de proyectos afectados en Nx
 
+---
+
+## ¿Qué es un proyecto afectado y por qué es importante?
+
+En un monorepo Nx, un **proyecto afectado** es cualquier aplicación o librería que se ve impactada por cambios recientes en el código. Nx analiza las dependencias entre proyectos y permite ejecutar tareas (build, test, lint) solo sobre los que realmente cambiaron, optimizando el tiempo de desarrollo y los recursos en CI/CD.
+
+Esta funcionalidad es clave para:
+- Evitar ejecuciones innecesarias en proyectos no modificados.
+- Acelerar los pipelines de integración continua.
+- Mejorar la eficiencia y escalabilidad en equipos grandes.
+
+---
+
 ## 🎯 Objetivo práctico
 Aprender a usar los comandos de **Nx Affected** para optimizar builds y pruebas, ejecutando solo lo que realmente cambió en el monorepo.
 

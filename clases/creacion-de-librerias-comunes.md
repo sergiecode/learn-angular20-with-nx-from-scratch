@@ -45,4 +45,11 @@ npx nx graph
 
 ---
 
+## Exportación centralizada y separación de responsabilidades
+
+- Exporta todos los componentes, servicios y modelos reutilizables desde el archivo `index.ts` de cada librería. Esto facilita su uso en las aplicaciones del monorepo.
+- Separa las librerías de UI (por ejemplo, `ui-shared`) de las de lógica y modelos (por ejemplo, `utils-common`) para mantener una arquitectura limpia y escalable.
+
+---
+
 > **Tip:** Las librerías pueden ser importadas fácilmente en cualquier app del monorepo usando la ruta relativa configurada en `tsconfig.base.json`.

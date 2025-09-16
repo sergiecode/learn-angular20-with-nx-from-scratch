@@ -2,6 +2,18 @@
 
 ---
 
+## ¿Qué es un lint?
+
+Un **lint** es una herramienta de análisis estático que revisa el código fuente en busca de errores, problemas de estilo, malas prácticas y posibles bugs antes de ejecutar o compilar el proyecto. En proyectos Nx y Angular, se utiliza principalmente ESLint para asegurar la calidad, consistencia y mantenibilidad del código.
+
+Lint ayuda a:
+- Detectar errores comunes y potenciales bugs.
+- Mantener un estilo de código uniforme en todo el equipo.
+- Aplicar reglas y mejores prácticas recomendadas por la comunidad.
+- Prevenir problemas en producción mediante la corrección temprana.
+
+---
+
 IMPORTS: EL @SOFTWARE O @LEARN HAY QUE ACTUALIZARLO POR EL QUE ESTÉ EN EL TSCONFIG
 
 ---
@@ -111,6 +123,11 @@ Al ejecutar los lints, se detectaron **33 problemas** distribuidos en 3 proyecto
   - `course-management.component.spec.ts` (línea 13)
 
 ---
+
+## Buenas prácticas para configuración de lints
+
+- Centraliza la configuración de reglas de lint en archivos compartidos como `.eslintrc.json` y `tsconfig.base.json` para mantener la coherencia en todo el monorepo.
+- Documenta y exporta reglas personalizadas en la configuración para que puedan ser reutilizadas y adaptadas fácilmente por todos los equipos y proyectos.
 
 ## Conclusión
 

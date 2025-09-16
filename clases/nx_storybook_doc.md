@@ -1,5 +1,18 @@
 # Clase 16: Storybook en Nx
 
+---
+
+## ¿Qué es Storybook y por qué usarlo en Nx?
+
+**Storybook** es una herramienta para construir, documentar y probar componentes UI de forma aislada. Integrarlo en Nx permite visualizar, testear y compartir componentes de librerías como `ui-shared` sin necesidad de levantar toda la aplicación.
+
+Su uso en Nx es clave para:
+- Mejorar la calidad y documentación de los componentes.
+- Facilitar el diseño, QA y colaboración entre equipos.
+- Probar estados y variaciones de componentes de manera independiente.
+
+---
+
 ## 🎯 Objetivo práctico
 Integrar **Storybook** en una librería de componentes de Angular dentro de un monorepo Nx para documentar, visualizar y probar componentes de forma aislada.
 

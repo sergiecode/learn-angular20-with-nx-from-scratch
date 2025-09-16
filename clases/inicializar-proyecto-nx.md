@@ -50,3 +50,22 @@ git push -u origin master
 2. Si vamos a [https://cloud.nx.app/](https://cloud.nx.app/) estará conectado (puede pedir crear la organización, le ponemos nuestro nombre).
 
 ---
+
+### Estructura básica del workspace
+
+Al finalizar la inicialización, tu workspace tendrá una estructura similar a:
+
+```
+learn-angular20-with-nx-from-scratch/
+  ├── packages/           # Apps y librerías
+  ├── nx.json             # Configuración principal de Nx
+  ├── package.json        # Dependencias globales
+  ├── tsconfig.base.json  # Configuración TypeScript
+  └── ...                 # Otros archivos y carpetas
+```
+
+Esta estructura permite gestionar múltiples proyectos y compartir código fácilmente.
+
+### Importancia de Nx Cloud
+
+Nx Cloud habilita caché remoto, análisis de builds y optimización de CI/CD, acelerando el desarrollo y la colaboración en equipos.

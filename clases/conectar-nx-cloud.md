@@ -70,6 +70,11 @@ Esto asegura que los cambios de configuración de Nx Cloud se mantengan sincroni
   npx nx lint ui-shared
   ```
 
+## Seguridad y gestión de permisos
+
+- Al conectar Nx Cloud en equipos grandes, revisa la configuración de permisos y acceso para asegurar que solo los miembros autorizados puedan modificar la configuración y acceder a los datos del workspace.
+- Consulta la documentación oficial de Nx Cloud para opciones avanzadas de seguridad, integración con CI/CD y administración de organizaciones.
+
 ## Conclusión
 
 Conectar tu proyecto Nx a Nx Cloud es un paso fundamental para aprovechar todo el potencial de Nx en equipos y proyectos profesionales. La integración es sencilla y los beneficios en velocidad, colaboración y visibilidad son inmediatos.

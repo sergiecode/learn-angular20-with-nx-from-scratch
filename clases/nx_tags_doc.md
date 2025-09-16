@@ -1,5 +1,18 @@
 # Clase Extra: Tags para organizar librerías en Nx
 
+---
+
+## ¿Qué es un tag y por qué es importante?
+
+Un **tag** en Nx es una etiqueta que se asigna a cada proyecto (aplicación o librería) dentro del monorepo para clasificarlo según su función o capa (por ejemplo, `ui`, `utils`, `api`, `app`). Los tags permiten definir reglas de dependencia y mantener una arquitectura limpia, escalable y fácil de mantener.
+
+Su uso es fundamental para:
+- Controlar qué proyectos pueden depender de otros.
+- Prevenir dependencias circulares y acoplamientos innecesarios.
+- Facilitar el trabajo en equipos grandes y el refactoring seguro.
+
+---
+
 ## 🎯 Objetivo práctico
 Aprender a utilizar **tags** en `nx.json` para organizar librerías dentro de un monorepo y aplicar **restricciones de dependencias**, manteniendo una arquitectura limpia y escalable.
 

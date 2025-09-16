@@ -46,6 +46,10 @@ En esta clase preparamos el entorno de desarrollo necesario para el curso de **A
    - 🔗 [johnpapa.Angular2](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2)
    - 📝 Snippets útiles para acelerar el desarrollo en Angular
 
+3. **Nx Console**
+   - 🔗 [Nrwl.angular-console](https://marketplace.visualstudio.com/items?itemName=Nrwl.angular-console)
+   - 📝 Interfaz gráfica para ejecutar comandos Nx, visualizar el grafo de dependencias y facilitar la gestión del monorepo
+
 ---
 
 ## 📚 Documentación Oficial

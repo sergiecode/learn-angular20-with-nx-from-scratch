@@ -1,5 +1,16 @@
-
 # 🧪 Clase 12: Agregar Tests Unitarios en Angular con NX
+
+---
+
+## ¿Qué es un test unitario?
+
+Un **test unitario** es una prueba automatizada que verifica el funcionamiento correcto de una unidad mínima de código (por ejemplo, una función, componente o servicio) de forma aislada. Su objetivo es asegurar que cada parte del sistema cumpla con su propósito y detectar errores rápidamente durante el desarrollo.
+
+En proyectos Nx y Angular, los tests unitarios ayudan a:
+- Validar la lógica de componentes, servicios y utilidades.
+- Prevenir regresiones al modificar el código.
+- Mejorar la calidad y mantenibilidad del proyecto.
+- Facilitar la colaboración en equipos grandes.
 
 ---
 
@@ -63,6 +74,13 @@ nx test <nombre-proyecto> --code-coverage
 - Escribir tests para cada componente, servicio y modelo nuevo.
 - Mantener los tests actualizados al modificar la lógica.
 - Revisar la cobertura y resultados antes de hacer deploy.
+
+---
+
+## Buenas prácticas para testing reutilizable
+
+- Centraliza los mocks y utilidades de testing en una librería común (`utils-common` o una específica de tests) para evitar duplicación y facilitar el mantenimiento.
+- Documenta y exporta los helpers de testing desde el archivo `index.ts` de la librería para que puedan ser utilizados fácilmente en todas las apps y librerías del monorepo.
 
 ## 🚀 Siguiente paso
 Una vez agregados y ejecutados los tests unitarios, ¡continúa con la revisión de lints y la integración continua!
