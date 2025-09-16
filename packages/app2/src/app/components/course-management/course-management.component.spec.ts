@@ -10,11 +10,10 @@ import { ApiService } from '@learn-angular20-with-nx-from-scratch/utils-common';
 describe('CourseManagementComponent', () => {
   let component: CourseManagementComponent;
   let fixture: ComponentFixture<CourseManagementComponent>;
-  let mockApiService: any;
 
   beforeEach(async () => {
     // Creamos un spy object para ApiService
-    const apiServiceSpy = {
+    const apiServiceSpy: Partial<ApiService> = {
       getCourses: jest.fn().mockReturnValue(of([])),
       createCourse: jest.fn().mockReturnValue(of({})),
       updateCourse: jest.fn().mockReturnValue(of({})),
@@ -31,7 +30,6 @@ describe('CourseManagementComponent', () => {
 
     fixture = TestBed.createComponent(CourseManagementComponent);
     component = fixture.componentInstance;
-    mockApiService = TestBed.inject(ApiService);
   });
 
   describe('Inicialización del componente', () => {

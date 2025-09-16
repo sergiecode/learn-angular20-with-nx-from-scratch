@@ -1,15 +1,15 @@
 // Tests simples para CoursesComponent con Jest
 // Estos tests verifican la funcionalidad básica del componente de cursos
 
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CoursesComponent } from './courses.component';
 import { ApiService } from '@learn-angular20-with-nx-from-scratch/utils-common';
 import { of } from 'rxjs';
 
 describe('CoursesComponent - Tests Simples', () => {
   let component: CoursesComponent;
-  let fixture: any;
-  let apiServiceMock: any;
+  let fixture: ComponentFixture<CoursesComponent>;
+  let apiServiceMock: Partial<ApiService>;
 
   beforeEach(async () => {
     // Creamos un mock simple del ApiService
