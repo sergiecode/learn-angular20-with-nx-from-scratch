@@ -9,58 +9,6 @@ Este proyecto es un **monorepo NX** que demuestra cómo construir aplicaciones m
 - 🎨 **Librería UI compartida** (ui-shared)
 - 🔧 **Utilidades comunes** (utils-common)
 
-### 🏗️ Arquitectura del Proyecto
-
-```
-📦 learn-angular20-with-nx-from-scratch/
-├── 📱 packages/
-│   ├── 🅰️ app1/                    # App Angular - Inscripciones de estudiantes
-│   ├── 🅰️ app2/                    # App Angular - Gestión de cursos y profesores
-│   ├── 🟢 server/                  # Servidor Node.js
-│   ├── 🎨 ui-shared/               # Componentes UI compartidos
-│   └── 🔧 utils-common/            # Modelos y servicios compartidos
-└── 📚 clases/                      # Documentación de las clases
-```
-
-### 🏷️ Sistema de Tags y Arquitectura
-
-El proyecto utiliza un sistema de **tags de NX** para controlar las dependencias y mantener una arquitectura limpia:
-
-```
-┌─────────────────┐
-│   scope:app     │  ← Aplicaciones (app1, app2)
-│  (Frontend Apps)│
-└─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│   scope:ui      │  ← Componentes UI (ui-shared)
-│  (UI Library)   │
-└─────────────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│  scope:utils    │     │   scope:api     │
-│   (Utilities)   │     │    (Server)     │
-└─────────────────┘     └─────────────────┘
-```
-
-**Reglas de dependencias:**
-- `scope:app` puede usar todo
-- `scope:ui` solo puede usar `scope:utils`
-- `scope:api` solo puede usar `scope:utils`
-- `scope:utils` es independiente
-
-## ✨ Características Destacadas
-
-- 🏷️ **Sistema de Tags NX**: Control automático de dependencias entre proyectos
-- 🧪 **Tests Unitarios**: Coverage completo con Jest
-- 🔍 **ESLint**: Código limpio y consistente en todo el monorepo
-- 📦 **Librerías Compartidas**: Reutilización de código entre aplicaciones
-- ⚡ **NX Cache**: Build y tests optimizados con cache inteligente
-- 🌐 **Full-Stack**: Frontend Angular + Backend Node.js
-- 📚 **Documentación Completa**: Guías paso a paso para cada funcionalidad
-
 ## 📖 Índice de Clases
 
 ### 🏗️ Configuración y Estructura Básica
@@ -92,16 +40,9 @@ El proyecto utiliza un sistema de **tags de NX** para controlar las dependencias
 ### 🏗️ Arquitectura y Organización Avanzada
 17. [NX Tags - Organización con Tags](clases/nx_tags_doc.md)
 18. [Comandos NX run-many](clases/nx_comandos_run-many.md)
+19. [Beneficios de Monorepo con NX: Caché y Rendimiento](clases/beneficios-monorepo-nx-cache.md)
 
-## 🚀 Tecnologías Utilizadas
 
-- **Framework Frontend:** Angular 20
-- **Framework Backend:** Node.js
-- **Monorepo Tool:** NX 21.4.1
-- **Testing:** Jest
-- **Linting:** ESLint
-- **Package Manager:** npm
-- **TypeScript:** 5.8.2
 
 ## 🛠️ Comandos Principales
 
