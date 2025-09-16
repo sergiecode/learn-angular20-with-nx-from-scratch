@@ -35,12 +35,16 @@ Este proyecto es un **monorepo NX** que demuestra cómo construir aplicaciones m
 ### ☁️ NX Cloud y Herramientas Avanzadas
 14. [Conectar a NX Cloud](clases/conectar-nx-cloud.md)
 15. [NX Affected](clases/nx_affected_doc.md)
-16. [NX Storybook](clases/nx_storybook_doc.md)
 
 ### 🏗️ Arquitectura y Organización Avanzada
-17. [NX Tags - Organización con Tags](clases/nx_tags_doc.md)
+16. [NX Tags - Organización con Tags](clases/nx_tags_doc.md)
+17. [Beneficios de Monorepo con NX: Caché y Rendimiento](clases/beneficios-monorepo-nx-cache.md)
 18. [Comandos NX run-many](clases/nx_comandos_run-many.md)
-19. [Beneficios de Monorepo con NX: Caché y Rendimiento](clases/beneficios-monorepo-nx-cache.md)
+
+### Extras:
+- [NX Storybook](clases/nx_storybook_doc.md) (No compatible con Angular 20)
+
+
 
 
 
